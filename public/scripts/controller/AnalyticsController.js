@@ -32,7 +32,7 @@ app.controller("AnalyticsController",function($scope){
     })
     var left =document.querySelector("#right");
     //animation:mymove 1s;
-    fetch("http://localhost:1234/getAttendenceReport").then(data=>{
+    fetch("https://warm-cliffs-37108.herokuapp.com/getAttendenceReport").then(data=>{
         data.json().then(data=>{
             console.log(data.data);
             for(i of data.data.persondata)
@@ -69,7 +69,7 @@ app.controller("AnalyticsController",function($scope){
             console.log("some error is occured",err);
         })
     })
-    fetch("http://localhost:1234/getMediceneSaleRecord").then(data=>{
+    fetch("https://warm-cliffs-37108.herokuapp.com/getMediceneSaleRecord").then(data=>{
         data.json().then(data=>{
             for(item of data)
             {
