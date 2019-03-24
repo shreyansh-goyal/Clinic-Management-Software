@@ -1,0 +1,37 @@
+{
+  "name": "NodeFirebaseProjects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.7",
+    "angular-route": "^1.7.7",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
+    "cookie-parser": "^1.4.4",
+    "cookie-session": "^1.3.3",
+    "cron": "^1.7.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "fetch": "^1.1.0",
+    "firebase": "^5.8.2",
+    "font-awesome": "^4.7.0",
+    "install": "^0.12.2",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.4.19",
+    "node-fetch": "^2.3.0",
+    "nodemailer": "^5.1.1",
+    "npm": "^6.9.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "path": "^0.12.7"
+  }
+}

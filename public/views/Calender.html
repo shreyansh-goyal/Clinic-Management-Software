@@ -1,0 +1,172 @@
+<div class="calender row">
+    <div class="appointments col-3">
+        Appointment
+        <div style="border-radius:15px;overflow:hidden;padding:0;margin:0 auto;width:80%;margin-top:30px;">
+        <div class="time"style="background-color:gray;margin:0;padding:0 10px;color:white;text-align:left;" ng-repeat="time in doctorsAppointment">
+            {{time[0]}}  <i style="text-align:right;float:right;" class="fas fa-plus"></i>
+            <div class="hide">
+            <div  ng-repeat="item in time[1]">
+                {{item}}
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div style="background-color:whitesmoke" class="fixappointment col-5">
+        <p>Book Appointments</p>
+        <div class="form-group">
+                <label for="">Patient Name</label>
+                <input type="text" ng-model="appointment.patientname" list="Patients" class="form-control">
+                <datalist id="Patients">
+                        <option ng-repeat="item in patients"  value={{item.Patients.name}}>{{item.Patients.name}}</option>
+                </datalist>
+        </div>
+        <div class="form-group">
+                <label for="">Doctor's Name</label>
+                <input type="text" ng-model="appointment.doctorname"  list="Doctors" class="form-control">
+                <datalist id="Doctors">
+                    <option ng-repeat="item in doctors"  value={{item.Doctors.name}}>{{item.Doctors.name}}</option>
+                </datalist>
+        </div>
+        <div class="form-group">
+                <label for="">Appointment Date</label>
+                <input  ng-change="getDoctorTime()" id="setDate" ng-model="appointment.date" type="date" class="form-control">
+        </div>
+        <div class="form-group">
+                <label for="">Appointment Time User Wants</label>
+                <select  name="repeatSelect" ng-options="items.time as items.name for items in timings" ng-change="getAvailableTime()" ng-model="appointment.timeUserWants" class="form-control"> 
+                    <option value="" selected="selected">Choose</option>
+                </select>
+        </div>
+        <div class="form-group">
+                <label for="">Available time</label>
+                <select class="form-control" name="available time" ng-options="items as items for items in availabletimings" ng-model="appointment.selectedTime" id="">
+                    <option value="" selected="selected">Choose</option>
+                </select>
+        </div>
+        <div>
+            <button ng-click="bookAppointment()" class="btn btn-primary">Book Appointment</button>
+        </div>
+        <div class="addpatient modal fade" id="patient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Add Patients</h1>
+                </div>
+                <div class="modal-body">
+                    <div  class="form-group">
+                        <label for="">Patient's Name :</label>
+                        <input ng-model="patient.name" type="text" class="form-control">        
+                    </div>
+                    <div  class="form-group">
+                        <label for="">Patient' Address :</label>
+                        <input ng-model="patient.address" type="text" class="form-control">        
+                    </div>
+                    <div  class="form-group">
+                        <label for="">Patient's Phone No :</label>
+                        <input ng-model="patient.contact" type="tel"  pattern="[0-9]{10}" required class="form-control">        
+                    </div>
+                    <div  class="form-group">
+                        <label for="">Mail Address :</label>
+                        <input ng-model="patient.mail" type="text" class="form-control">        
+                    </div>
+                    <div  class="form-group">
+                        <label for="">Age :</label>
+                        <input ng-model="patient.age" type="text" class="form-control">        
+                    </div>
+                    <div  class="form-group">
+                        <label for="">Gender :</label>
+                        <input ng-model="patient.gender" type="text" class="form-control">        
+                    </div>
+                    <p ng-show="filldetails" style="color:red;">Fill all the fields correctly</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" ng-click="addPatient()" id="addpatient"  class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>        
+          <div class="adddoctor modal fade" id="doctor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Add Doctor</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Name :</label>
+                        <input ng-model="doctor.name" type="text" class="form-control">        
+                    </div>
+                    <div class="form-group">
+                        <label for="">Professional Domain :</label>
+                        <input ng-model="doctor.domain" type="text" class="form-control">        
+                    </div>
+                    <div class="form-group">
+                        <label for="">Contact Number :</label>
+                        <input ng-model="doctor.contact" type="tel" pattern="[0-9]{10}" class="form-control">        
+                    </div>
+                    <div class="form-group">
+                        <label for="">Timings:</label>
+                        <input style="width:30%" step="0" ng-model="doctor.willAvailableFrom" type="time" class="form-control">
+                        <input style="width:30%" step="0" ng-model="doctor.willAvailableTo" type="time" class="form-control">        
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mail Address :</label>
+                        <input ng-model="doctor.mail" type="email" class="form-control">        
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gender :</label>
+                        <select ng-model="doctor.gender" class="form-control">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>        
+                        <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <p ng-show="filldetails" style="color:red;">Fill all the fields correctly</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" ng-click="addDoctor()" id="adddoctor" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div> 
+        <div class="modal fade" id="appointmentsdate" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Choose The Date To View Appointments</h5>
+                </div>
+                <div class="modal-body">
+                <button ng-click="showAppointment(firstday)" data-toggle="modal" data-target="#appointmentsdate" style="width:100%;margin:5px 0px;background-color:#0da2e8;color:white;font-weight:800;border-radius:10px;outline: none;">{{firstday}}</button>
+                <button ng-click="showAppointment(secondday)" data-toggle="modal" data-target="#appointmentsdate" style="width:100%;margin:5px 0px;background-color:#0da2e8;color:white;font-weight:800;border-radius:10px;outline: none;">{{secondday}}</button>
+                <button ng-click="showAppointment(thirdday)"  data-toggle="modal" data-target="#appointmentsdate" style="width:100%;margin:5px 0px;background-color:#0da2e8;color:white;font-weight:800;border-radius:10px;outline: none;">{{thirdday}}</button>
+                <button ng-click="showAppointment(fourthday)" data-toggle="modal" data-target="#appointmentsdate" style="width:100%;margin:5px 0px;background-color:#0da2e8;color:white;font-weight:800;border-radius:10px;outline: none;">{{fourthday}}</button>
+                <button ng-click="showAppointment(fifthday)"  data-toggle="modal" data-target="#appointmentsdate" style="width:100%;margin:5px 0px;background-color:#0da2e8;color:white;font-weight:800;border-radius:10px;outline: none;">{{fifthday}}</button>
+                <button ng-click="showAppointment(sixthday)"  data-toggle="modal" data-target="#appointmentsdate" style="width:100%;margin:5px 0px;background-color:#0da2e8;color:white;font-weight:800;border-radius:10px;outline: none;">{{sixthday}}</button>
+                <button ng-click="showAppointment(seventhday)"  data-toggle="modal" data-target="#appointmentsdate" style="width:100%;margin:5px 0px;background-color:#0da2e8;color:white;font-weight:800;border-radius:10px;outline: none;">{{seventhday}}</button>
+            </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>       
+    </div>
+    <div class="view-doctors add col-4">
+        <div>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#patient">Add Patient</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#doctor">Add Doctor</button>
+        </div>
+        <div style="width:100%;color:gray;margin-top:20px;background-color:whitesmoke;border-radius:20px;border:1px solid black;">
+        <div id="display-doctors">
+            <div ng-click="assignDoctor(data.Doctors.name)" data-toggle="modal" data-target="#appointmentsdate" ng-repeat="data in doctors">           
+              <p>{{data.Doctors.name}}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{{data.Doctors.domain}}</p>
+              <p>{{data.Doctors.mail}}</p>
+            </div>
+
+        </div>    
+    </div>
+</div>

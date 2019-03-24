@@ -1,0 +1,91 @@
+.appointments{
+    height:100%;
+    background-color:black;
+    text-align:center;
+}
+.appointments p{
+    text-align:center;
+}
+.add{
+    height:100%;
+
+    right:0;
+    background-color:black;
+    padding-top:10px;
+}
+.add>div:first-child{
+    display:flex;
+
+}
+.add button{
+    width:45%;
+    margin:0 auto;
+    font-size:9px;
+}
+.calender{
+    height:50vw;
+}
+.fixappointment p{
+text-align:center;
+font-weight:800;
+}
+.fixappointment{
+    font-weight:800;
+
+}
+.fixappointment input{
+    width:70%;
+    display:inline-block;
+}
+.fixappointment select{
+    width:70%;
+    display:inline-block;
+}
+.fixappointment label{
+    width:20%;
+    display:inline-block;
+}
+.fixappointment textarea{
+    width:70%;
+    display:inline;
+}
+.view-doctors{
+    height:100%;
+    background-color:black;
+    text-align:center;
+    overflow:hidden;
+    word-wrap: break-word;
+}
+#display-doctors div{
+    border-radius:10px;
+    cursor: pointer;
+    border-style: solid;
+    border-width:0px 0px 1px 0px;
+    border-color: gray;
+    line-height: 16px;
+    font-size:14px;
+}
+#display-doctors div p{
+padding:0px;
+margin:2px;
+}
+#display-doctors div:hover{
+background-color:white;
+}
+    
+#display-doctors div:last-child{
+border:none;
+}
+ul, ol {  
+    margin:0;
+    padding:0;
+}
+.time>.hide{
+    
+    opacity:0;
+    max-height: 0;
+    transition-duration:1s;
+}
+i{
+transition-duration:0.5s;
+}

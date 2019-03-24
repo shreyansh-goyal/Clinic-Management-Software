@@ -1,0 +1,49 @@
+<div class="Store">
+    <div class="form-group">
+        <label for="">Name of Medicene</label>
+        <input class="form-control" ng-change="fillObject()" ng-model="medicene.name" list="Medicene" name="browser">
+        <datalist id="Medicene">
+            <option ng-repeat="item in select"  value={{item.Medicene.name}}>{{item.Medicene.name}}</option>
+        </datalist>
+</datalist>
+    </div>
+    <div class="form-group">
+        <label for="">Cost of Purchasal of this Medicene</label>
+        <input type="number"  ng-model="medicene.Pcost" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Units</label>
+        <input type="number" ng-model="medicene.units" class="form-control"> 
+    </div> 
+    <div>
+        <label for="">Discount for Customer</label>
+        <input type="number" ng-change="toPercentageCost(medicene.discount)" ng-model="medicene.discount" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Cost for the Customer Per Unit</label>
+        <input type="number"   ng-model="medicene.Ccost" class="form-control">
+    </div>
+    <div class="form-group">
+            <label for="">GST</label>
+            <input ng-change="toPercentageGst(medicene.gst)" type="number" ng-model="medicene.gst" class="form-control">     
+    </div>
+    <button class="btn btn-primary" ng-click="add()">Add</button>
+    <table class="table table-striped" style="margin:10px;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Sno</th>
+            <th scope="col">Medicene</th>
+            <th scope="col">Units We Have</th>
+          </tr>
+        </thead>
+        <tbody >
+
+          <tr ng-repeat="i in table">
+            <td>{{$index}}</td>
+            <td>{{i.Medicene.name}}</td>
+            <td>{{i.Medicene.units}}</td>
+            </tr>
+        </tbody>
+      </table>
+      {{medicene}}
+</div>

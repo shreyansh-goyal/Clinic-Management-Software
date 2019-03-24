@@ -1,0 +1,58 @@
+<div class="row billInformation">
+    <div class="col-9">
+    <form action="">
+        <div class="input form-group">
+            <label for="">Name :</label>
+            <input type="text" class="form-control">
+            <label for="">Mobile :</label>
+            <input type="text" class="form-control">
+        </div>
+        <div>
+            <div class="input form-group">
+                <label for="">Email :</label>
+                <input type="text" class="form-control" >
+                <label for="">Prescribed By:</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </form>
+    <table id="invoiceTable" class="table table-striped" style="margin:10px;">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Medicene</th>
+                <th scope="col">Units</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Discount</th>
+                <th scope="col">GST</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr ng-repeat="item in billArray track by $index">
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td><input  ng-change="updateTotalAmount(item)" ng-init="item.unit=0" ng-model="item.unit" type="number"></td>
+                <td>{{item.cost}}</td>
+                <td>{{item.discount}}</td>
+                <td>{{item.gst}}</td>
+                <td>{{item.cost*item.unit+item.cost*item.gst*0.01*item.unit-item.cost*item.discount*0.01*item.unit}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <button ng-click="generateInvoice()" class="btn btn-primary">Generate Invoice</button> 
+          <span style="float:right;background:#26292d;color:white;font-weight:bold;padding:3px 10px;">Total Amount:{{totalAmount}}</span>
+     
+    </div>
+    <div class="col-3">
+        <input type="text" ng-model="searchtext" style="width:100%;margin:0;margin-top:4vw;">
+        {{search}}
+        <div class="medicenelist" >
+          <div class="heading">Inventory</div>
+          <div class="listofmedicene" style="margin-top:10px;">
+              <div ng-click="addToBill(item)" ng-repeat="item in mediceneList|filter:searchtext|limitTo:10">{{item.Medicene.name}}&nbsp;<i style="float:right;" class="fas fa-plus-square"></i></div>
+          </div>
+        </div>
+        
+    </div>
+</div>

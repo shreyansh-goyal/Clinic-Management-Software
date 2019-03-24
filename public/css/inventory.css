@@ -1,0 +1,45 @@
+.billInformation{
+    background-color:whitesmoke;
+    min-height:47.3vw;
+    overflow-x:hidden;
+}
+.input input{
+    width:20%;
+    height:30px;
+    margin:0 7px;
+}
+.input{
+    display:flex;
+}
+.input label{
+    font-size:14px;
+    width:10%;
+}
+form{
+    padding:10px;
+}
+.medicenelist{
+width:97%;
+margin:0 auto;
+margin-top:20px;
+}
+.heading{
+    background-color:gray;
+    text-align:center;
+    color:white;
+    box-shadow: 5px 10px 8px black;
+    border-radius:3px;
+}
+.listofmedicene{
+    border:0.02px solid whitesmoke;
+    background-color:#c4c0c0 ;
+    border-radius:3px;
+}
+.listofmedicene div{
+    padding:1px;
+}
+.listofmedicene div:hover{
+background-color:orange;
+cursor: pointer;
+
+}

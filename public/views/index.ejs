@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Sniglet" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
+        integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
+        crossorigin="anonymous"></script>
+    <script src="../../node_modules/bootstrap/dist/css/bootstrap.min.css"></script>
+    <script src="../../node_modules/angular/angular.min.js"></script>
+    <script src="../../node_modules/angular-route/angular-route.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+        integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="../scripts/ScriptsForEventHandling/nav.js"></script>
+    <script src="../scripts/modules/app.js"></script>
+    <script src="../scripts/routing.js"></script>
+    <script src="../scripts/factory/storefactory.js"></script>
+    <script src="../scripts/controller/calenderpagecontroller.js"></script>
+    <script src="../scripts/controller/inventorycontroller.js"></script>
+    <script src="../scripts/controller/storecontroller.js"></script>
+    <script src="../scripts/controller/maincontroller.js"></script>
+    <script src="../scripts/controller/storecontroller.js"></script>
+    <script src="../scripts/Jquery/calender.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="../scripts/controller/AnalyticsController.js"></script>
+    <script src="../scripts/controller/attendencecontroller.js"></script>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/calender.css">
+    <link rel="stylesheet" href="../css/inventory.css">
+    <link rel="stylesheet" href="../css/store.css">
+    <title>Document</title>
+</head>
+
+<body ng-app="myapp" ng-controller="maincontroller" style="overflow:hidden;">
+    <nav>
+        <ul>
+            <li style="padding-bottom:10px;"><img style="" src="../assets/serachBookAppointmentLogo.png"></li>
+            <div id="center">
+                <a id="main" ng-href="#/">
+                    <li>Calender</li>
+                </a>
+                <a ng-href="#/Inventory">
+                    <li>Inventory</li>
+                </a>
+                <a ng-href="#/Analytics">
+                    <li> Analytics</li>
+                </a>
+                <a ng-href="#/Store">
+                    <li>Store</li>
+                </a>
+                <a ng-href="#/Attendence">
+                    <li>Attendence</li>
+                </a>
+                <li style="padding-top:10px;;cursor:pointer">
+                    <img onclick="showMenu()" style="bottom:5px;left:10px;position:relative;border-radius:20px;" src=<%=img%> alt="">
+                    <span style="margin-left:20px;" ng-model="name" ><%=name%></span>
+                        <ul class="menu" style="z-index:1000;margin:0;transform:translate(0px,-100px);transition-duration:1s;background-color:whitesmoke;opacity:0">
+                            <li ng-click="logout()">
+                                 Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i> 
+                            </li>
+                        </ul>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <ng-view></ng-view>
+
+</body>
+<script>
+            document.querySelector('#main').setAttribute("style","background-color:#ffffff")
+    $(document).ready(function () {
+        $('a>li').bind('click', function (event) {
+            $('a>li').css("background-color", "#dfdfdf")
+            $(this).css("background-color", "#ffffff");
+        });
+    });
+    function showMenu()
+    {
+        console.log(document.querySelector(".menu").style);
+        if(document.querySelector(".menu").style.opacity=='0')
+        {
+            document.querySelector(".menu").setAttribute("style","z-index:1000;opacity:1;transition-duration:1s;transform:translate(0,0);background:whitesmoke;");
+        }
+        else
+        {
+            document.querySelector(".menu").setAttribute("style","z-index:1000;opacity:0;transform:translate(0px,-100px);transition-duration:1s;background-color:whitesmoke;")
+        }
+    }
+</script>
+
+</html>

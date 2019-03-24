@@ -1,0 +1,57 @@
+    <div style="display:flex;background-color:#1973d3;height:160px;justify-content: space-around;padding:30px 70px;">
+            <div style="align-self:center;width:30%;font-family: 'Sniglet', cursive;font-size:30px;color:white;">
+                Add your employees over here
+            </div>
+            <img style="width:55%;" src="https://cdn.pixabay.com/photo/2017/02/21/09/35/arrow-2085195_960_720.png" alt="">
+            <button class="hello btn btn-default" style="" data-toggle="modal" data-target="#myModal">Add Employees</button>
+    </div>
+    <div style="min-height:350px;">
+      <p style="text-align:center;font-size:30px;font-family: 'Montserrat', sans-serif;">Mark the Attendence of the Employees over here</p>
+      <table class="table table-dark attendence"  style="width:60%;margin:0 auto;min-height:300px;">
+        <thead>
+          <tr>
+            <th scope="col">Sno</th>
+            <th scope="col">Name</th>
+            <th scope="col">Attendence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="a" ng-repeat="item in attendence">
+            <th scope="row">{{$index+1}}</th>
+            <td>{{item.name}}</td>
+            <!-- disabled="{{item.disabled}}" -->
+            <td><button  ng-click="markattendence(item)" class="btn btn-success">Present</button></td>
+          </tr>
+        </tbody>
+      </table>      
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">     
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="">Employee Name</label>
+                    <input ng-model="employee.name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Employee Role</label>
+                    <select ng-model="employee.role" class="form-control" name="" id="">
+                        <option >Doctor</option>
+                        <option >Nurse</option>
+                        <option >Attendent</option>
+                        <option >Receptionist</option>
+                        <option >Chemist</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" ng-click="addemployee()" class="btn btn-success" data-dismiss="modal">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer style="height:90px;width:100%;background-color:#1973d3; margin-top:50px;position:relative">
+          <button class="hello btn btn-default" ng-click="uploadattendence()" style="position:absolute;left:45%;top:20%;">Upload The Attendence</button>
+      </footer>
+
