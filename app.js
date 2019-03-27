@@ -4,7 +4,6 @@ const path = require("path");
 const fs = require("fs");
 const cookieSession = require("cookie-session");
 const passportSetup = require("./google2");
-const facebookSetup = require("./facebook");
 const ejs = require("ejs");
 const app = express();
 const bodyParser = require("body-parser");
@@ -29,9 +28,6 @@ app.use(express.static("public"));
 app.get('/google',passport.authenticate('google',{
     scope:['profile','email' ]
     }))
-app.get('/facebook',passport.authenticate('facebook',{
-    scope:['profile','email']
-}))
 app.get('/auth/google/callback',passport.authenticate('google'),(req,res)=>{
         console.log("hello I am in the callback function");
         console.log("I don't know what is happening");
