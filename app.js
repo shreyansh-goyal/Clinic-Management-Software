@@ -33,22 +33,6 @@ app.get('/auth/google/callback',passport.authenticate('google'),(req,res)=>{
         console.log("I don't know what is happening");
         res.status(200).redirect("/profile/")
     })
-app.use("/",(req,res,next)=>{
-    if(req.user)
-    {
-        if(req.url=='/')
-        {
-            res.redirect("/profile/")
-        }
-        next();
-    }
-    else
-    {
-        console.log(req.url)
-        console.log(req.user);
-        res.redirect("/login.html")
-    }
-})
 app.set('views', path.join(__dirname, '/public/views'));
 
 app.use(require("./utils/cors"));
