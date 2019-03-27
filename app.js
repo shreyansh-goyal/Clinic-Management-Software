@@ -7,7 +7,6 @@ const passportSetup = require("./google2");
 const ejs = require("ejs");
 const app = express();
 const bodyParser = require("body-parser");
-app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -16,7 +15,6 @@ app.use(cookieSession({
     keys:['thisisasecret']
 }));
 app.set('view engine','ejs');
-
 app.use(passport.initialize());
 app.use(passport.session(),function(req,res,next){
     var CronJob = require('cron').CronJob;
@@ -35,6 +33,22 @@ app.get('/auth/google/callback',passport.authenticate('google'),(req,res)=>{
         console.log("I don't know what is happening");
         res.status(200).redirect("/profile/")
     })
+app.use("/",(req,res,next)=>{
+    if(req.user)
+    {
+        if(req.url=='/')
+        {
+            res.redirect("/profile/")
+        }
+        next();
+    }
+    else
+    {
+        console.log(req.url)
+        console.log(req.user);
+        res.redirect("/login.html")
+    }
+})
 app.set('views', path.join(__dirname, '/public/views'));
 
 app.use(require("./utils/cors"));
