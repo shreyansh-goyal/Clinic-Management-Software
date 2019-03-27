@@ -7,6 +7,7 @@ const passportSetup = require("./google2");
 const ejs = require("ejs");
 const app = express();
 const bodyParser = require("body-parser");
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -15,6 +16,7 @@ app.use(cookieSession({
     keys:['thisisasecret']
 }));
 app.set('view engine','ejs');
+
 app.use(passport.initialize());
 app.use(passport.session(),function(req,res,next){
     var CronJob = require('cron').CronJob;
