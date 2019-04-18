@@ -16,7 +16,7 @@ app.use(cookieSession({
     keys:['thisisasecret']
 }));
 var corsOptions = {
-    origin: 'http://warm-cliffs-37108.herokuapp.com/',
+    origin: 'https://warm-cliffs-37108.herokuapp.com/',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 app.set('view engine','ejs');
