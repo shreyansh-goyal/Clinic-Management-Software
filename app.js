@@ -10,15 +10,11 @@ const cors = reuire("cors");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-
+app.use(require("./utils/cors"));
 app.use(cookieSession({
     maxAge:24*60*60*1000,
     keys:['thisisasecret']
 }));
-var corsOptions = {
-    origin: 'https://warm-cliffs-37108.herokuapp.com/',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
 app.set('view engine','ejs');
 app.use(passport.initialize());
 app.use(passport.session(),function(req,res,next){
@@ -56,8 +52,8 @@ app.use("/",(req,res,next)=>{
 })
 app.set('views', path.join(__dirname, '/public/views'));
 
-app.use(require("./utils/cors"));
-app.use('/',cors(corsOptions),require("./API/api"));
+
+app.use('/',require("./API/api"));
 //preson have to login for the cron schedule
 app.get("/logout",(req,res)=>{
     console.log("I am logging out");
