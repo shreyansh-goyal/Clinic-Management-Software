@@ -6,7 +6,6 @@ const cookieSession = require("cookie-session");
 const passportSetup = require("./google2");
 const ejs = require("ejs");
 const app = express();
-const cors = reuire("cors");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
