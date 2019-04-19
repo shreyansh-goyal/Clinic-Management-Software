@@ -279,6 +279,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
         console.log(`${today.getFullYear()}-${mm}-${dd}`);
         getdate.setAttribute("min",`${today.getFullYear()}-${mm}-${dd}`)
         fetch("https://warm-cliffs-37108.herokuapp.com/getPatients").then(data=>{
+            console.log("this is the data",data);
             data.json().then(data=>{
                 $scope.patients=data.data;
                 $scope.$apply();

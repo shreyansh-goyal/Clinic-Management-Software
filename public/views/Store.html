@@ -1,6 +1,6 @@
 <div class="Store">
     <div class="form-group">
-        <label for="">Name of Medicene</label>
+        <label for="">Name of Medicene hello this is shreeyansh goyal</label>
         <input class="form-control" ng-change="fillObject()" ng-model="medicene.name" list="Medicene" name="browser">
         <datalist id="Medicene">
             <option ng-repeat="item in select"  value={{item.Medicene.name}}>{{item.Medicene.name}}</option>
@@ -37,7 +37,6 @@
           </tr>
         </thead>
         <tbody >
-
           <tr ng-repeat="i in table">
             <td>{{$index}}</td>
             <td>{{i.Medicene.name}}</td>
