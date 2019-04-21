@@ -60,7 +60,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
             console.log($scope.doctor.willAvailableFrom);
             console.log($scope.doctor.willAvailableTo); 
 
-            fetch("https://warm-cliffs-37108.herokuapp.com//addDoctors",{
+            fetch("https://warm-cliffs-37108.herokuapp.com/addDoctors",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache", 
@@ -286,6 +286,9 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
                 console.log("we get the data of doctors from the database");
                 console.log($scope.patients);
             }).catch(err=>{
+                console.log(data.body.text().then(data=>{
+                    console.log(data);
+                }));
                 console.log("cannot fetch the data due to the error",err);
             })
         })
