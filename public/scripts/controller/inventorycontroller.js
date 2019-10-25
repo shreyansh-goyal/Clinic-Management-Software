@@ -8,7 +8,7 @@ app.controller("inventorycontroller",function($scope,storefactory){
     //This method update the add medicene collumn
     function UpdateAddMedicene(){
         $scope.mediceneList=[];
-        fetch("https://warm-cliffs-37108.herokuapp.com/getMedicene").then(resolve=>{
+        fetch("http://localhost:1234/getMedicene").then(resolve=>{
             resolve.json().then(data=>{
                 console.log(data);
                 $scope.mediceneList = data.data;
@@ -39,7 +39,7 @@ app.controller("inventorycontroller",function($scope,storefactory){
     //This is the function to add the medicene to the bill
      $scope.addToBill=(mediceneObj)=>{
         var obj={};
-         fetch(`https://warm-cliffs-37108.herokuapp.com/getunits?name=${mediceneObj.Medicene.name}`).then(data=>{
+         fetch(`http://localhost:1234/getunits?name=${mediceneObj.Medicene.name}`).then(data=>{
             data.json().then(data=>{
                 obj.min=data[0].Medicene.units;
                 if(checkInBill(obj))
@@ -72,7 +72,7 @@ app.controller("inventorycontroller",function($scope,storefactory){
     }
     //This function generate the bill in pdf format
     $scope.generateInvoice=()=>{
-        fetch("https://warm-cliffs-37108.herokuapp.com/checkUnits");
+        fetch("http://localhost:1234/checkUnits");
         console.log($scope.billArray);
             var medicenearr=[];
             for(medicene of $scope.billArray)
@@ -83,7 +83,7 @@ app.controller("inventorycontroller",function($scope,storefactory){
                 medicenearr.push(obj);
             }
             console.log("this is medicene array",medicenearr);
-            fetch("https://warm-cliffs-37108.herokuapp.com/updateMedcieneUnits",{
+            fetch("http://localhost:1234/updateMedcieneUnits",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache",
@@ -166,7 +166,7 @@ app.controller("inventorycontroller",function($scope,storefactory){
             obj1.name = item.Medicene.name;
             obj2.units=item.Medicene.units;
             console.log("obj1",obj1,"Obj2",obj2);
-            fetch("https://warm-cliffs-37108.herokuapp.com/updateMedicene",{
+            fetch("http://localhost:1234/updateMedicene",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache", 

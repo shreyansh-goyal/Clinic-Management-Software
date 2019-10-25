@@ -22,7 +22,7 @@ $scope.add=()=>{
             obj2.Ccost=obj1.Ccost;
             obj2.discount=obj1.discount;
             obj2.gst=obj1.gst;
-            fetch("https://warm-cliffs-37108.herokuapp.com/updateMedicene",{
+            fetch("http://localhost:1234/updateMedicene",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache", 
@@ -45,7 +45,7 @@ $scope.add=()=>{
         {
             $scope.medicene.user = 
             console.log("data needed to be stored",$scope.medicene);
-            fetch("https://warm-cliffs-37108.herokuapp.com/addMedicene",
+            fetch("http://localhost:1234/addMedicene",
                 {
                     method: "POST", 
                     mode: "cors",
@@ -80,7 +80,7 @@ function validate()
 }
 //Retrieve the data to fill in the select form
 function getMedicenes(){
-    fetch("https://warm-cliffs-37108.herokuapp.com/getMedicene").then(resolve=>{
+    fetch("http://localhost:1234/getMedicene").then(resolve=>{
         resolve.json().then(data=>{
             $scope.table=data.data;
             $scope.select=data.data

@@ -21,7 +21,7 @@ app.controller("attendencecontroller",function($scope){
     }
     $scope.uploadattendence=()=>
     {
-            fetch("https://warm-cliffs-37108.herokuapp.com/uploadattendence",{
+            fetch("http://localhost:1234/uploadattendence",{
             method: "POST", 
             mode: "cors",
             cache: "no-cache", 
@@ -52,7 +52,7 @@ app.controller("attendencecontroller",function($scope){
     function fetchEmployees()
     {
         $scope.attendence=[];
-        fetch("https://warm-cliffs-37108.herokuapp.com/fetchemployee").then(data=>{
+        fetch("http://localhost:1234/fetchemployee").then(data=>{
             data.json().then(data=>{
                 $scope.attendence = data.data;
                 console.log($scope.attendence); 
@@ -67,7 +67,7 @@ app.controller("attendencecontroller",function($scope){
     {
         console.log($scope.employee);
         console.log("employee in process");
-        fetch("https://warm-cliffs-37108.herokuapp.com/addemployee",{
+        fetch("http://localhost:1234/addemployee",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache", 

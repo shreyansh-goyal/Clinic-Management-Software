@@ -28,7 +28,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
         if(validate("patient"))
         {   var close = document.querySelector("#addpatient");
             close.setAttribute("data-dismiss","modal");
-                fetch("https://warm-cliffs-37108.herokuapp.com/addPatients",{
+                fetch("http://localahost:1234/addPatients",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache", 
@@ -60,7 +60,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
             console.log($scope.doctor.willAvailableFrom);
             console.log($scope.doctor.willAvailableTo); 
 
-            fetch("https://warm-cliffs-37108.herokuapp.com/addDoctors",{
+            fetch("http://localhost:1234/addDoctors",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache", 
@@ -75,6 +75,10 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
                     alert("Doctors details are uploaded");
                     data.json().then(data=>{
                         console.log(data);
+                        $scope.doctors.push({Doctors:$scope.doctor})
+                    ;
+                    console.log($scope.doctors);
+                    $scope.$apply();
                     })
                 }).catch(err=>{
                     alert("Unable to update the details");
@@ -129,7 +133,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
         var time = $scope.appointment.timeUserWants;
         var timedoctorhave= $scope.timings;
         var date=getdate(day);
-        fetch("https://warm-cliffs-37108.herokuapp.com/fetchAndFillAppointmentInDatabase",{
+        fetch("http://localhost:1234/fetchAndFillAppointmentInDatabase",{
             method: "POST", 
             mode: "cors",
             cache: "no-cache", 
@@ -251,9 +255,10 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
     }
     //this function get doctors from the firebase and update them in array
     function getDoctors(){
-        fetch("https://warm-cliffs-37108.herokuapp.com/getDoctors").then(data=>{
+        fetch("http://localhost:1234/getDoctors").then(data=>{
             data.json().then(data=>{
                 console.log("data of the doctors",data);
+                console.log(data);
                 $scope.doctors=data.data;
                 $scope.$apply();
                 console.log("we get the data of doctors from the database");
@@ -278,7 +283,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
         }
         console.log(`${today.getFullYear()}-${mm}-${dd}`);
         getdate.setAttribute("min",`${today.getFullYear()}-${mm}-${dd}`)
-        fetch("https://warm-cliffs-37108.herokuapp.com/getPatients").then(data=>{
+        fetch("http://localhost:1234/getPatients").then(data=>{
             console.log("this is the data",data);
             data.json().then(data=>{
                 $scope.patients=data.data;
@@ -286,7 +291,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
                 console.log("we get the data of doctors from the database");
                 console.log($scope.patients);
             }).catch(err=>{
-                console.log(data.body.text().then(data=>{
+                console.log(data.body.json().then(data=>{
                     console.log(data);
                 }));
                 console.log("cannot fetch the data due to the error",err);
@@ -322,7 +327,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
             }
         }
         console.log(availabletimingdata);
-        fetch("https://warm-cliffs-37108.herokuapp.com/updateAppointments",{
+        fetch("http://localhost:1234/updateAppointments",{
             method: "POST", 
             mode: "cors",
             cache: "no-cache", 
@@ -347,7 +352,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
             doctor:doctorName
         }
         console.log(obj);
-        fetch("https://warm-cliffs-37108.herokuapp.com/fetchAndFillAppointmentInDatabase",{
+        fetch("http://localhost:1234/fetchAndFillAppointmentInDatabase",{
             method: "POST", 
             mode: "cors",
             cache: "no-cache", 
