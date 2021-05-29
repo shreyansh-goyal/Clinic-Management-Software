@@ -1,4 +1,4 @@
-# Food Delivery Application
+# Clinic Management Software
 Clinic Management Software(CMS) is minimal viable product(MVP) for managing appointments, bills, payments and patient data of a clinic. 
 ## About
 This project is aimed at delivering all possible services that a clinic will need to operate smoothly.
@@ -13,29 +13,24 @@ CMS software helps registering all the doctors and patient of clinic. It manages
 ## Project 
 
 ### Login Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/UserLogin.PNG "Login Panel")
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Login1.PNG "Login Panel")
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/UserLogin2.PNG "Login Panel")
+## Main Page
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Mainpage.PNG "Login Panel")
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/MainPage2.PNG "Login Panel")
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/add%20Patient.PNG "Login Panel")
 
-### User Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/MainPage.PNG "User Panel")
+## Attendance Panel
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance.PNG "Login Panel")
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/SearchPage.PNG "User Panel")
+## Analytics Panel
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance2.PNG "Login Panel")
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Analytics.PNG "Login Panel")
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/Restaurant_Page.PNG "User Panel")
+## Inventory Panel
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/inventory.PNG "Login Panel")
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/invoice.PNG "Login Panel")
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/Restaurant_Page2.PNG "User Panel")
-
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/Rating_Page.PNG "User Panel")
-
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/Cart_Page.PNG "User Panel")
-
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/Cart_Page3.PNG "User Panel")
-
-### Admin Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/Admin_Panel.PNG "Admin Panel")
-
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/Register_Restaurant.PNG "Admin Panel")
-
-### Delivery Partner Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Food_ordering_application/delivery%20Partner.PNG "Delivery Partner Panel")
+## Store Panel
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store.PNG "Login Panel")
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store2.PNG"Login Panel")
