@@ -27,7 +27,7 @@
     "font-awesome": "^4.7.0",
     "install": "^0.12.2",
     "jquery": "^3.3.1",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "node-fetch": "^2.3.0",
     "nodemailer": "^5.1.1",
     "npm": "^6.9.0",
