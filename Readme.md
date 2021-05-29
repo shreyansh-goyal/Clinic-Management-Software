@@ -17,7 +17,9 @@ CMS software helps registering all the doctors and patient of clinic. It manages
 
 ## Main Page
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Mainpage.PNG "Login Panel")
+
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/MainPage2.PNG "Login Panel")
+
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/add%20Patient.PNG "Login Panel")
 
 ## Attendance Panel
@@ -25,12 +27,15 @@ CMS software helps registering all the doctors and patient of clinic. It manages
 
 ## Analytics Panel
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance2.PNG "Login Panel")
+
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Analytics.PNG "Login Panel")
 
 ## Inventory Panel
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/inventory.PNG "Login Panel")
+
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/invoice.PNG "Login Panel")
 
 ## Store Panel
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store.PNG "Login Panel")
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store2.PNG"Login Panel")
+
+![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store2.PNG "Login Panel")
