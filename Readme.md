@@ -1,29 +1,14 @@
 # Food Delivery Application
-Food Delivery Application (FDA) is minimal viable product (MVP) of swiggy. Show some ❤️ and star ⭐ the repo if you liked it.
-
+Clinic Management Software(CMS) is minimal viable product(MVP) for managing appointments, bills, payments and patient data of a clinic. 
 ## About
-This project is aimed at delivering all possible services that a food ordering business caters.Project is divided into three parts:-
-* Admin Panel
-* User Panel
-* Delivery Partner Panel
-
-### Admin Panel
-Admin panel is given the responsibility to control the UI of the application programmatically. Admin can register delivery partners and restaurant partners.
-
-### User Panel
-User panel is responsible for showing all the restaurants near the user present location. User can search thier favourite restaurant and order from restaurants of their choice. User may rate a restaurant depending upon his/her previous order. On ordering user can track their order until successful delivery of the order.
-
-### Delivery Partner Panel
-Delivery Partner panel is responsible to distributing orders to different delivery partners.It provide the functionality of showing the required path to be traced by delivery partners for their journey of successfully delivering the order.
+This project is aimed at delivering all possible services that a clinic will need to operate smoothly.
+CMS software helps registering all the doctors and patient of clinic. It manages staff attendance and work with them hand in hand to block their calendars and schedule appointment. Before appointment patient and doctors are notified about their appointments minimizing the chances of confusion.CMS also manages clinic medical supply and notify clinic whenever the doses go below minimal permissible limit.CMS also helps in smooth billing operations so the all the operations of clinic can be controlled through one panel.
 
 ## Technical Stack
-1. Angular
+1. Angular JS
 2. Node JS
-3. Socket.IO
-4. Typescript
-5. Material UI
-6. Bootstrap
-7. Mongo DB
+3. Bootstrap
+4. Mongo DB
 
 ## Project 
 
