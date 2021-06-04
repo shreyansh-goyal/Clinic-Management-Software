@@ -16,26 +16,39 @@ CMS software helps registering all the doctors and patient of clinic. It manages
 ![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Login1.PNG "Login Panel")
 
 ## Main Page
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Mainpage.PNG "Login Panel")
+<div>
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Mainpage.PNG" width="400" height="200">
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/MainPage2.PNG "Login Panel")
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/MainPage2.PNG" width="400" height="200">
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/add%20Patient.PNG "Login Panel")
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/add%20Patient.PNG" width="400" height="200">
+</div>
+
 
 ## Attendance Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance.PNG "Login Panel")
+<div>
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance.PNG" width="600" height="300">
+</div>
+
 
 ## Analytics Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance2.PNG "Login Panel")
+<div>
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance2.PNG" width="400" height="200">
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Analytics.PNG "Login Panel")
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Analytics.PNG" width="400" height="200">
+</div>
+
 
 ## Inventory Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/inventory.PNG "Login Panel")
+<div>
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/inventory.PNG" width="400" height="200">
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/invoice.PNG "Login Panel")
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/invoice.PNG" width="400" height="200">
+</div>
 
 ## Store Panel
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store.PNG "Login Panel")
+<div>
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store.PNG" width="400" height="200">
 
-![alt text](https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store2.PNG "Login Panel")
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store2.PNG" width="400" height="200">
+</div>
