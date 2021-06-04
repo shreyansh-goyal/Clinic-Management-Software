@@ -52,3 +52,8 @@ CMS software helps registering all the doctors and patient of clinic. It manages
 
 <img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/store2.PNG" width="400" height="200">
 </div>
+
+## Project Video Link
+Complete Explanation:-https://drive.google.com/file/d/1Jm4_OOYaYLiWBryGOKrV0cO-if7QaA-E/view?usp=sharing
+
+Implementation:-https://drive.google.com/file/d/1jHTlgMX2GNGPiyUvdSqokLCDE8B4oj1T/view?usp=sharing
