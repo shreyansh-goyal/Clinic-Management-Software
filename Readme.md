@@ -27,7 +27,7 @@ CMS software helps registering all the doctors and patient of clinic. It manages
 
 ## Attendance Panel
 <div>
-<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance.PNG" width="600" height="300">
+<img src="https://github.com/shreyansh-goyal/Project-Snapshot/blob/main/Clinic_Management_Software/Attendance.PNG" width="400" height="200">
 </div>
 
 
