@@ -65,7 +65,7 @@ app.use("/profile",require("./profile"));
 const sslServer=https.createServer(
 app);
 
-sslServer.listen(process.env.PORT||8080,()=>{
+sslServer.listen(8080,()=>{
     console.log(process.env.PORT);
     console.log("server is up at post 1234");
 });
