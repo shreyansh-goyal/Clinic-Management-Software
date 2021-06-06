@@ -61,6 +61,7 @@ app.get("/logout",(req,res)=>{
     res.redirect("/login.html");    
 });
 app.use("/profile",require("./profile"));
+
 const sslServer=https.createServer({
     key:fs.readFileSync("./Key/key.pem"),
     cert:fs.readFileSync("./Key/cert.pem")
@@ -68,5 +69,6 @@ const sslServer=https.createServer({
 app);
 
 sslServer.listen(process.env.PORT||1234,()=>{
+    console.log(process.env.PORT);
     console.log("server is up at post 1234");
 });
