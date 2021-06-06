@@ -60,7 +60,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
             console.log($scope.doctor.willAvailableFrom);
             console.log($scope.doctor.willAvailableTo); 
 
-            fetch("http://localhost:1234/addDoctors",{
+            fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/addDoctors",{
                 method: "POST", 
                 mode: "cors",
                 cache: "no-cache", 
@@ -133,7 +133,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
         var time = $scope.appointment.timeUserWants;
         var timedoctorhave= $scope.timings;
         var date=getdate(day);
-        fetch("http://localhost:1234/fetchAndFillAppointmentInDatabase",{
+        fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/fetchAndFillAppointmentInDatabase",{
             method: "POST", 
             mode: "cors",
             cache: "no-cache", 
@@ -255,7 +255,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
     }
     //this function get doctors from the firebase and update them in array
     function getDoctors(){
-        fetch("http://localhost:1234/getDoctors").then(data=>{
+        fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/getDoctors").then(data=>{
             data.json().then(data=>{
                 console.log("data of the doctors",data);
                 console.log(data);
@@ -283,7 +283,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
         }
         console.log(`${today.getFullYear()}-${mm}-${dd}`);
         getdate.setAttribute("min",`${today.getFullYear()}-${mm}-${dd}`)
-        fetch("http://localhost:1234/getPatients").then(data=>{
+        fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/getPatients").then(data=>{
             console.log("this is the data",data);
             data.json().then(data=>{
                 $scope.patients=data.data;
@@ -327,7 +327,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
             }
         }
         console.log(availabletimingdata);
-        fetch("http://localhost:1234/updateAppointments",{
+        fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/updateAppointments",{
             method: "POST", 
             mode: "cors",
             cache: "no-cache", 
@@ -352,7 +352,7 @@ app.controller("calenderpagecontroller",function($scope,storefactory){
             doctor:doctorName
         }
         console.log(obj);
-        fetch("http://localhost:1234/fetchAndFillAppointmentInDatabase",{
+        fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/fetchAndFillAppointmentInDatabase",{
             method: "POST", 
             mode: "cors",
             cache: "no-cache", 

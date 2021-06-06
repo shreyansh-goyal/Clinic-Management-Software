@@ -55,6 +55,7 @@ font-weight:800;
     text-align:center;
     overflow:hidden;
     word-wrap: break-word;
+    z-index: 2;
 }
 #display-doctors div{
     border-radius:10px;

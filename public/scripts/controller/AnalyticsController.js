@@ -32,7 +32,7 @@ app.controller("AnalyticsController",function($scope){
     })
     var left =document.querySelector("#right");
     //animation:mymove 1s;
-    fetch("http://localhost:1234/getAttendenceReport").then(data=>{
+    fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/getAttendenceReport").then(data=>{
         data.json().then(data=>{
             console.log(data.data);
             for(i of data.data.persondata)
@@ -69,7 +69,7 @@ app.controller("AnalyticsController",function($scope){
             console.log("some error is occured",err);
         })
     })
-    fetch("http://localhost:1234/getMediceneSaleRecord").then(data=>{
+    fetch("https://ec2-13-232-8-74.ap-south-1.compute.amazonaws.com:1234/getMediceneSaleRecord").then(data=>{
         data.json().then(data=>{
             for(item of data)
             {

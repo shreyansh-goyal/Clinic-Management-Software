@@ -76,7 +76,7 @@
                 <li style="padding-top:10px;;cursor:pointer">
                     <img onclick="showMenu()" style="bottom:5px;left:10px;position:relative;border-radius:20px;" src=<%=img%> alt="">
                     <span style="margin-left:20px;" ng-model="name" ><%=name%></span>
-                        <ul class="menu" style="z-index:1000;margin:0;transform:translate(0px,-100px);transition-duration:1s;background-color:whitesmoke;opacity:0">
+                        <ul class="menu" style="z-index:1000;margin:0;transform:translate(0px,-100px);transition-duration:1s;background-color:whitesmoke;opacity:1;position: absolute;">
                             <li ng-click="logout()">
                                  Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i> 
                             </li>
@@ -101,7 +101,7 @@
         console.log(document.querySelector(".menu").style);
         if(document.querySelector(".menu").style.opacity=='0')
         {
-            document.querySelector(".menu").setAttribute("style","z-index:1000;opacity:1;transition-duration:1s;transform:translate(0,0);background:whitesmoke;");
+            document.querySelector(".menu").setAttribute("style","z-index:1000;opacity:1;transition-duration:1s;transform:translate(0,0);background:whitesmoke;position:relative;");
         }
         else
         {
