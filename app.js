@@ -6,6 +6,7 @@ const cookieSession = require("cookie-session");
 const passportSetup = require("./google2");
 const ejs = require("ejs");
 const app = express();
+const https=require("https");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -60,6 +61,12 @@ app.get("/logout",(req,res)=>{
     res.redirect("/login.html");    
 });
 app.use("/profile",require("./profile"));
-app.listen(process.env.PORT||1234,()=>{
-    console.log("server started at port 1234")
-})
+const sslServer=https.createServer({
+    key:fs.readFileSync("./Key/key.pem"),
+    cert:fs.readFileSync("./Key/cert.pem")
+},
+app);
+
+sslServer.listen(process.env.PORT||1234,()=>{
+    console.log("server is up at post 1234");
+});
