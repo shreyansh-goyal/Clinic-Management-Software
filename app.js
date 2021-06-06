@@ -62,10 +62,6 @@ app.get("/logout",(req,res)=>{
 });
 app.use("/profile",require("./profile"));
 
-const sslServer=https.createServer(
-app);
-
-sslServer.listen(8080,()=>{
-    console.log(process.env.PORT);
-    console.log("server is up at post 1234");
-});
+app.listen(8080,()=>{
+console.log("updated port to 8080");
+})
